@@ -8,10 +8,10 @@ export const RouterComponent = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App/>}/>
-                <Route path='/Crear' element={<FormFactura/>} />
-                <Route path='/buscar' element={<FacturaSearch/>} />
-                <Route path='/reporte' element={<ObtenerFacturas/>} />
+                <Route path='/' element={<App />} />
+                <Route path='/Crear' element={<FormFactura />} />
+                <Route path='/buscar' element={<FacturaSearch />} />
+                <Route path='/reporte' element={<ObtenerFacturas />} />
             </Routes>
         </BrowserRouter>
     )

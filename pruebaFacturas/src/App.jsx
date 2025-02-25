@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 
 function App() {
-  
+
   const navigate = useNavigate();
 
   const handleCrear = () => {
@@ -21,10 +21,12 @@ function App() {
 
   return (
     <>
-      <h1>Gestor de Facturas</h1>
+      <h1 className='title' >Gestor de Facturas</h1>
+      <div className='contenedorButtons' >
         <button onClick={handleCrear}>Crear nueva factura</button>
         <button onClick={hanldeBuscar} >Buscar factura por numero factura</button>
         <button onClick={handleReporte} >Facturas de una temporada</button>
+      </div>
     </>
   )
 }

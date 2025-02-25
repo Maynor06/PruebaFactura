@@ -3,31 +3,31 @@ import { useState } from "react"
 import { useNavigate } from "react-router";
 
 export const ObtenerFacturas = () => {
-    const [fechaInicio, setFechaInicio] = useState(""); 
-    const [fechaFin, setFechaFin] = useState("");
-    const [facturas, setFacturas] = useState([]); 
+  const [fechaInicio, setFechaInicio] = useState("");
+  const [fechaFin, setFechaFin] = useState("");
+  const [facturas, setFacturas] = useState([]);
 
-    const buscarFacturas = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8080/facturas/reporte?fechaInicio=${fechaInicio}T00:00:00&fechaFin=${fechaFin}T23:59:59`)
-            setFacturas(response.data);
-            console.log(response.data);
-            
+  const buscarFacturas = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/facturas/reporte?fechaInicio=${fechaInicio}T00:00:00&fechaFin=${fechaFin}T23:59:59`)
+      setFacturas(response.data);
+      console.log(response.data);
 
-        }catch(error){
-            console.log(error);
-            
-        }
-    }; 
 
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate("/")
+    } catch (error) {
+      console.log(error);
+
     }
+  };
 
-    return(
-        <div>
-            <button onClick={handleExit} >Regresar</button>
+  const navigate = useNavigate();
+  const handleExit = () => {
+    navigate("/")
+  }
+
+  return (
+    <div>
+      <button onClick={handleExit} >Regresar</button>
       <h2>Reporte de Facturas</h2>
       <p>Fecha Inicio</p>
       <input type="date" onChange={(e) => setFechaInicio(e.target.value)} />
@@ -62,5 +62,5 @@ export const ObtenerFacturas = () => {
         <p>No hay facturas en este rango de fechas.</p>
       )}
     </div>
-    )
+  )
 }
