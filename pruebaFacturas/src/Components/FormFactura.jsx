@@ -22,7 +22,7 @@ export const FormFactura = () => {
 
         try{
             const response = await axios.post("http://localhost:8080/facturas/createFactura", dataFactura);
-            console.log(response.status);
+            console.log(response.data);
             
         }catch(error) {
             alert("Error")

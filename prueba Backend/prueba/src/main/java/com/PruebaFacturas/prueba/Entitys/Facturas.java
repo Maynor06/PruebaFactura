@@ -33,11 +33,11 @@ public class Facturas {
     @Enumerated(EnumType.STRING)
     private EstdoFactura estado = EstdoFactura.PENDIENTE;
 
-    @OneToMany(mappedBy = "factura")
-    private List<DetalleFactura> detalles;
-
-    @OneToMany(mappedBy = "factura")
-    private List<Pagos> pagos;
+//    @OneToMany(mappedBy = "factura")
+//    private List<DetalleFactura> detalles;
+//
+//    @OneToMany(mappedBy = "factura")
+//    private List<Pagos> pagos;
 
 
 }
